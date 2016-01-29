@@ -11,7 +11,7 @@ public class Fire : MonoBehaviour {
 	}
 
 	void Start () {
-		maxFire = 1;
+		maxFire = 10;
 	}
 	
 	void Update () {
