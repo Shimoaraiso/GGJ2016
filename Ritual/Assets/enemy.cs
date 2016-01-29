@@ -8,10 +8,12 @@ public class enemy : MonoBehaviour {
 
     public int enamyState;
     float enemyTimer;//倒された時の待機時間
+    bool hit;//当たったか判定
 
     void start(){
         enamyState = 0;
         enemyTimer = 0.0f;
+        hit = false;
     } 
 
 	// Update is called once per frame
@@ -19,7 +21,7 @@ public class enemy : MonoBehaviour {
 
         switch(enamyState)
         {
-            case 0:
+            case 0://初期状態()
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed);//目的地に移動
 
                 if (transform.position == targetPosition)//目的地に着いたら
@@ -27,11 +29,18 @@ public class enemy : MonoBehaviour {
                     Destroy(this.gameObject);//enemy消去
                 }
                 break;
-            case 1:
+            case 1://倒された
                 enemyTimer += Time.deltaTime;
+                if (!hit)
+                {
+                    this.GetComponent<CircleCollider2D>().enabled = false;//Collider消去
+                    Debug.Log("hit");
+                    hit = true;
+                }
+
                 if (enemyTimer > 2) enamyState = 2;//吸い込まれる状態に移行
                 break;
-            case 2:
+            case 2://吸い込まれる状態
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * 5);//目的地に移動
 
                 if (transform.position == targetPosition)//目的地に着いたら
