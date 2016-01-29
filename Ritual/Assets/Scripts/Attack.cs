@@ -20,7 +20,6 @@ public class Attack : MonoBehaviour {
 	}
 	
 	void Update () {
-		//isAttack = false;
 
 		if (count >= 4) {
 			isAttack = false;
@@ -31,7 +30,6 @@ public class Attack : MonoBehaviour {
 			isAttack = true;
 			count = 0;
 		}
-
 
 		if (isHit) {
 			fireCtr.fireNum -= 1;
@@ -44,13 +42,11 @@ public class Attack : MonoBehaviour {
 	
 
 	void OnTriggerStay2D(Collider2D col) {
-		Debug.Log("hogehoge");
 		if (col.gameObject.tag == "Enemy") {
 			if (isAttack) {
 				enemy enm = col.gameObject.GetComponent<enemy>();
 				enm.enamyState = 1;
 				isHit = true;
-				//fireCtr.fireNum -= 1;
 			}
 		}
 	}

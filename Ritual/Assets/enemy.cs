@@ -49,9 +49,9 @@ public class enemy : MonoBehaviour {
                 transform.RotateAround(Vector3.zero, new Vector3(0.0f, 0.0f, 1.0f), 120 * Time.deltaTime);//回転の挙動追加
                 break;
         }
-	}
 
-	void OnCollisionEnter2D(Collision2D col) {
-		
+
+        
+        
 	}
 }
