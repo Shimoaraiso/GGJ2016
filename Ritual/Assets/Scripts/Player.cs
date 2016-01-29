@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	float moveSpeed = 10;
 	float inputX;
 	float inputY;
-
+    //test
 	public Rigidbody2D rb2d;
 
 	FireCounter fireCtr;
