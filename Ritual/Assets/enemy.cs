@@ -34,7 +34,6 @@ public class enemy : MonoBehaviour {
                 if (!hit)
                 {
                     this.GetComponent<CircleCollider2D>().enabled = false;//Collider消去
-                    Debug.Log("hit");
                     hit = true;
                 }
 
