@@ -22,8 +22,9 @@ public class enemy : MonoBehaviour {
         switch(enamyState)
         {
             case 0://初期状態()
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed);//目的地に移動
-
+				if (GameController.isPlaying) {
+					transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed);//目的地に移動
+				}
                 if (transform.position == targetPosition)//目的地に着いたら
                 {
                     Destroy(this.gameObject);//enemy消去

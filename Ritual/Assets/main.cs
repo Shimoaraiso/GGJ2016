@@ -14,10 +14,6 @@ public class main : MonoBehaviour {
     int state;
     public bool clear;
 
-
-
-
-    // Use this for initialization
     void Start () {
         SpaceKey = false;
         GameObject ESObject = GameObject.Find("EnemySpawnObject");//EnemySpawnObjectのオブジェクト取得
@@ -28,10 +24,8 @@ public class main : MonoBehaviour {
         state = 0;
         clear = false;
         ES.Espeed = 0.0f;
-        
     }
 	
-	// Update is called once per frame
 	void Update () {
         if (point <= tm.getPlaytime() &&  point*2> tm.getPlaytime() && state == 0)
         {
@@ -55,7 +49,7 @@ public class main : MonoBehaviour {
             }
         }
 
-        if (tm.getTime() > spawnInterval && !clear) {
+        if (tm.getTime() > spawnInterval && !clear && GameController.isPlaying) {
             ES.enemySpawnRand();//enemyをランダム発生
             tm.setTime(0.0f);
         }

@@ -4,14 +4,14 @@ using System.Collections;
 public class Attack : MonoBehaviour {
 
 	GameObject target;
-	FireCounter fireCtr;
+	Fire fire;
 
 	bool isAttack;
 	bool isHit;
     int count;
 
 	void Awake() {
-		fireCtr = GameObject.FindWithTag("Fire").GetComponent<FireCounter>();
+		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 	}
 
 	void Start () {   
@@ -24,14 +24,14 @@ public class Attack : MonoBehaviour {
 			count = 0;
 		}
 
-		if (fireCtr.fireNum != 0 && Input.GetButtonDown("Fire1")) {
+		if (GameController.isPlaying && fire.fireNum != 0 && Input.GetButtonDown("Fire1")) {
 			// 攻撃判定は3フレーム継続
 			isAttack = true;
 			count = 0;
 		}
 
 		if (isHit) {
-			fireCtr.fireNum -= 1;
+			fire.fireNum -= 1;
             isHit = false;
 		}
 		// フレームカウント

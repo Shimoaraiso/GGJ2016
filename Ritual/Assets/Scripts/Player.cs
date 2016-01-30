@@ -9,10 +9,10 @@ public class Player : MonoBehaviour {
 
 	public Rigidbody2D rb2d;
 	public Animator anmtr;
-	FireCounter fireCtr;
+	Fire fire;
 
 	void Awake() {
-		fireCtr = GameObject.FindWithTag("Fire").GetComponent<FireCounter>();
+		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 	}
 
 	void Start() {
@@ -25,7 +25,9 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		Move();
+		if (GameController.isPlaying) {
+			Move();
+		}
 		Clamp();
 	}
 

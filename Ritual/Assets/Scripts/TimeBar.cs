@@ -7,33 +7,29 @@ public class TimeBar : MonoBehaviour {
 	float crntBarLength;
 	float barSpan;
 	float playTime;
-	bool isPlaying;
 
-	timer tm;
+	timer timer;
 
 	void Awake() {
-		tm = GameObject.Find("TimerObject").GetComponent<timer>();
+		timer = GameObject.Find("TimerObject").GetComponent<timer>();
 	}
-
+	
 	void Start () {
 		crntBarLength = 0;
         transform.localScale = new Vector2(crntBarLength, transform.localScale.y);
-		barSpan = barLength / 60;
-		isPlaying = true;
+		barSpan = barLength / 350;
 		StartCoroutine(Timebar());
 	}
 
 	void Update () {
-		if (tm.getPlaytime() >= 60) {
-			isPlaying = false;
-		}
-		
+		if (timer.getPlaytime() >= 70) {
+			GameController.End();
+		}	
 	}
 
-
 	private IEnumerator Timebar() {
-		while (isPlaying) {
-			yield return new WaitForSeconds(1f);
+        while (GameController.isPlaying) {
+			yield return new WaitForSeconds(0.2f);
 			crntBarLength += barSpan;
             transform.localScale = new Vector2(crntBarLength, transform.localScale.y);
 		}

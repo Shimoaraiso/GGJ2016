@@ -15,7 +15,7 @@ public class LightSet : MonoBehaviour {
     int fileState;
     // Use this for initialization
     void Start () {
-        End = false;
+        //End = false;
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
         fireLight = GameObject.Find("Firelight").GetComponent<Light>();
         li.intensity = 0.0f;
@@ -38,7 +38,7 @@ public class LightSet : MonoBehaviour {
             {
                 fileState -=1;
                 count = 0;
-                if (fileState==0) end();
+				if (fileState == 0) GameController.End();
             }
             else
             {
@@ -96,28 +96,30 @@ public class LightSet : MonoBehaviour {
 	}
     void end()//終了処理
     {
-		Debug.Log("end");
-        GameObject.Find("MainGameObject").GetComponent<main>().clear = true;//enemy生成停止
-        GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
-        GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
-        GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
-        GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f,0.0f);//吹っ飛び防止
-        /*配列で取得*/
-        /*
-        GameObject[] objects;
-        while ((objects = GameObject.FindGameObjectsWithTag("Enemy")) == null)
-        {
+		//Debug.Log("end");
+  //      GameObject.Find("MainGameObject").GetComponent<main>().clear = true;//enemy生成停止
+  //      GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
+  //      GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
+  //      GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
+  //      GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f,0.0f);//吹っ飛び防止
+  //      /*配列で取得*/
+  //      /*
+  //      GameObject[] objects;
+  //      while ((objects = GameObject.FindGameObjectsWithTag("Enemy")) == null)
+  //      {
             
-        }
-        foreach (GameObject ene in objects)
-        {
-            ene.GetComponent<enemy>().enabled = false;//enemy停止
-        }
-        */
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach (GameObject ene in objects)
-        {
-            ene.GetComponent<enemy>().enabled = false;//enemy停止
-        }
+  //      }
+  //      foreach (GameObject ene in objects)
+  //      {
+  //          ene.GetComponent<enemy>().enabled = false;//enemy停止
+  //      }
+  //      */
+  //      GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
+  //      foreach (GameObject ene in objects)
+  //      {
+			
+  //          ene.GetComponent<enemy>().enabled = false;//enemy停止
+		//	Debug.Log("hogehoge");
+		//}
     }
 }

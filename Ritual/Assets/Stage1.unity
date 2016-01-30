@@ -1391,6 +1391,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1503727723}
   - 114: {fileID: 1503727722}
+  - 114: {fileID: 1503727724}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1412,6 +1413,9 @@ MonoBehaviour:
   bg1: {fileID: 1703315574}
   bg2: {fileID: 1061029721}
   bg3: {fileID: 1048560454}
+  player: {fileID: 466126001}
+  timerObj: {fileID: 1764576801}
+  mainGameObj: {fileID: 0}
 --- !u!4 &1503727723
 Transform:
   m_ObjectHideFlags: 0
@@ -1424,6 +1428,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!114 &1503727724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1503727721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a9e0061ff5770c4d872d26ad451c7e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playtime: 70
+  spawnInterval: 2.4
+  espeed: 0
+  clear: 0
 --- !u!1 &1506693206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1741,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!1 &1764576801 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 152790, guid: 23e247d4c832dcb458561c5625a322d6, type: 2}
+  m_PrefabInternal: {fileID: 2115395299}
 --- !u!1 &1767493729
 GameObject:
   m_ObjectHideFlags: 0
