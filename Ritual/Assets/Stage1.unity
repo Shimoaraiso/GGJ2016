@@ -517,7 +517,7 @@ Transform:
   m_Children:
   - {fileID: 66832312}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &466126005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1895,6 +1895,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+=======
+    - target: {fileID: 11468542, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 130434, guid: b21d8c6ff8de1e44e8db13a2fa9b0ecd, type: 2}
+    - target: {fileID: 171054, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+>>>>>>> 117a0eff5138f9efba0e05e98a232b8a7376b941
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
   m_IsPrefabParent: 0
