@@ -10,8 +10,8 @@ public class LightSet : MonoBehaviour {
     int stock;//fireの一つ前の値
     int count;
     public static int fireStoc;
-   
-    
+    int max;
+    int fileState;
     // Use this for initialization
     void Start () {
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
@@ -22,6 +22,8 @@ public class LightSet : MonoBehaviour {
         stock = altarState.altarCount;
         count = 0;
         fireStoc = 3;
+        max = 3;
+        fileState=1; 
         
     }
 	
@@ -32,7 +34,8 @@ public class LightSet : MonoBehaviour {
         {
             if (altarState.altarCount < stock)
             {
-                count--;    
+                fileState -=1;
+                count = 0;
             }
             else
             {
@@ -41,16 +44,27 @@ public class LightSet : MonoBehaviour {
             stock = altarState.altarCount;//stock更新
         }
         
-        if (count == 3)
+        if (count == max)
         {
-            count =0;
-            if (fireLight.intensity < 7)
+            count = 0;
+            if(fileState<3)fileState += 1;
+            /*if (fireLight.intensity < 7)
             {
                 fireLight.intensity += 1;//ライトを明るく
                 fireStoc += 1;
                
-            }
-        }else if(count == -3)
+            }*/
+        }
+        switch (fileState)
+        {
+            case 0: end(); break;
+            case 1: fireStoc = 3; max = 3; break;
+            case 2: fireStoc = 5; max = 6; break;
+            case 3: fireStoc = 7; break;
+        }
+        print("FS"+fireStoc+"M"+ max+"C"+count+"ST"+fileState);
+        /*
+        else if(count == -1)
         {
             count = 0;
             if (fireLight.intensity > 0)
@@ -65,7 +79,7 @@ public class LightSet : MonoBehaviour {
             
             
         }
-       
+       */
         time += Time.deltaTime;
         if (time >= 1.0)
         {
@@ -82,6 +96,8 @@ public class LightSet : MonoBehaviour {
         GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
         GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
         GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().isKinematic = false;//吹っ飛び防止
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().angularVelocity = 0;//吹っ飛び防止
 
         /*配列で取得*/
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
