@@ -674,7 +674,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 431084, guid: a0c7a639dd18bb94b8cec400fe1c8f6d, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0c7a639dd18bb94b8cec400fe1c8f6d, type: 2}
@@ -1696,6 +1696,10 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 117188, guid: 493314dc71053bd49a260b5da0c31d21, type: 2}
+    - target: {fileID: 171054, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
   m_IsPrefabParent: 0

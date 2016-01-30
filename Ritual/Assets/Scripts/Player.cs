@@ -31,20 +31,27 @@ public class Player : MonoBehaviour {
 
 	void Move() {
 		rb2d.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
-		if (inputX < 0f)
-			transform.eulerAngles = new Vector3(0, 0, 90);
-		if (inputX > 0f)
-			transform.eulerAngles = new Vector3(0, 0, -90);
-		if (inputY > 0f && inputX < 0.5f)
+		if (inputY > 0f && inputX < 0.5f) {		// 上
 			transform.eulerAngles = new Vector3(0, 0, 0);
-		if (inputY < 0f && inputX > -0.5f)
+			anmtr.SetInteger("RotateZ", 1);
+		}
+		if (inputX > 0f) {						// 右
+			transform.eulerAngles = new Vector3(0, 0, -90);
+			anmtr.SetInteger("RotateZ", 2);
+		}
+		if (inputY < 0f && inputX > -0.5f) {	// 下
 			transform.eulerAngles = new Vector3(0, 0, 180);
+			anmtr.SetInteger("RotateZ", 3);
+		}
+		if (inputX < 0f) {						// 左
+			transform.eulerAngles = new Vector3(0, 0, 90);
+			anmtr.SetInteger("RotateZ", 4);
+		}
 	}
 
 	void Clamp() {
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
-
 		Vector2 pos = transform.position;
 
 		pos.x = Mathf.Clamp(pos.x, min.x, max.x);
@@ -59,17 +66,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void MecCheck() {
-		//velocityX = cRigidbody2D.velocity.x;
-		//velocityY = cRigidbody2D.velocity.y;
-		//isRunning = Mathf.Abs(velocityX) > 0.1 ? true : false;
-		//isJumping = (velocityY > 0.1 && isGrounded) ? true : false;
-		//isFalling = (velocityY < 0 && isGrounded) ? true : false;
 		anmtr.SetFloat("Horizontal", inputX);
 		anmtr.SetFloat("Vertical", inputY);
-
-		//anmtr.SetBool("isRunning", isRunning);
-		//anmtr.SetBool("isJumping", isJumping);
-		//anmtr.SetBool("isFalling", isFalling);
-		//anmtr.SetBool("isGrounded", isGrounded);
 	}
 }
