@@ -4,7 +4,10 @@ using System.Collections;
 public class TimeBar : MonoBehaviour {
 
 	public float barLength = 1.42f;
-	float barSec;
+	float crntBarLength;
+	float barSpan;
+	float playTime;
+	bool isPlaying;
 
 	timer tm;
 
@@ -13,11 +16,26 @@ public class TimeBar : MonoBehaviour {
 	}
 
 	void Start () {
-		barSec = barLength / 60;
+		crntBarLength = 0;
+        transform.localScale = new Vector2(crntBarLength, transform.localScale.y);
+		barSpan = barLength / 60;
+		isPlaying = true;
+		StartCoroutine(Timebar());
 	}
-	
-	void Update () {
 
-		transform.localScale = new Vector2(barSec, transform.localScale.y);
+	void Update () {
+		if (tm.getPlaytime() >= 60) {
+			isPlaying = false;
+		}
+		
+	}
+
+
+	private IEnumerator Timebar() {
+		while (isPlaying) {
+			yield return new WaitForSeconds(1f);
+			crntBarLength += barSpan;
+            transform.localScale = new Vector2(crntBarLength, transform.localScale.y);
+		}
 	}
 }
