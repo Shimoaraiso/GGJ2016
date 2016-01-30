@@ -9,7 +9,6 @@ public class FireCounter : MonoBehaviour {
 
     void Start () {
         fireNumStock = fireNum;
-        GameObject.Find("TorchObject").GetComponent<TorchPower>().show(0);
     }
 
 	void Update () {
