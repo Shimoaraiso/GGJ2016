@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 	float inputY;
 
 	public Rigidbody2D rb2d;
-
+	public Animator anmtr;
 	FireCounter fireCtr;
 
 	void Awake() {
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		UserInput();
-
+		MecCheck();
 	}
 
 	void FixedUpdate() {
@@ -39,6 +39,10 @@ public class Player : MonoBehaviour {
 			transform.eulerAngles = new Vector3(0, 0, 0);
 		if (inputY < 0)
 			transform.eulerAngles = new Vector3(0, 0, 180);
+
+		//if (transform.localScale.x > 0 && h < 0 || (transform.localScale.x < 0 && h > 0)) {
+		//	transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
+		//}
 	}
 
 	void Clamp() {
@@ -58,12 +62,18 @@ public class Player : MonoBehaviour {
 		inputY = Input.GetAxisRaw("Vertical");
 	}
 
-	void OnCollisionEnter2D(Collision2D col) {
-		if (col.gameObject.tag == "Enemy") {
-			//if (fireCtr.fireNum > 0) {
-			//	fireCtr.fireNum -= 1;
-			//}
-		}
+	void MecCheck() {
+		//velocityX = cRigidbody2D.velocity.x;
+		//velocityY = cRigidbody2D.velocity.y;
+		//isRunning = Mathf.Abs(velocityX) > 0.1 ? true : false;
+		//isJumping = (velocityY > 0.1 && isGrounded) ? true : false;
+		//isFalling = (velocityY < 0 && isGrounded) ? true : false;
+		anmtr.SetFloat("Horizontal", inputX);
+		anmtr.SetFloat("Vertical", inputY);
 
+		//anmtr.SetBool("isRunning", isRunning);
+		//anmtr.SetBool("isJumping", isJumping);
+		//anmtr.SetBool("isFalling", isFalling);
+		//anmtr.SetBool("isGrounded", isGrounded);
 	}
 }
