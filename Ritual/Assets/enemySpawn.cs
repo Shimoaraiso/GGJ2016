@@ -32,7 +32,7 @@ public class enemySpawn : MonoBehaviour {
     /*上下画面外で生成*/
     void spawnTopAndBottom(float PositionY)
     {
-        GameObject enemys =Instantiate(enemy, new Vector3(Random.Range(leftPositon, rightPositon), PositionY), transform.rotation)as GameObject;//敵(enemy)生成
+        GameObject enemys = GameObject.Instantiate(enemy, new Vector3(Random.Range(leftPositon, rightPositon), PositionY), transform.rotation)as GameObject;//敵(enemy)生成
         enemys.gameObject.GetComponent<enemy>().speed += Espeed;
     }
 }
