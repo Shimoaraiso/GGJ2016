@@ -11,11 +11,10 @@ public class Attack : MonoBehaviour {
     int count;
 
 	void Awake() {
-		fireCtr = GameObject.Find("FireGUI").GetComponent<FireCounter>();
+		fireCtr = GameObject.FindWithTag("Fire").GetComponent<FireCounter>();
 	}
 
-	void Start () {
-       
+	void Start () {   
     }
 	
 	void Update () {
@@ -26,20 +25,18 @@ public class Attack : MonoBehaviour {
 		}
 
 		if (fireCtr.fireNum != 0 && Input.GetButtonDown("Fire1")) {
+			// 攻撃判定は3フレーム継続
 			isAttack = true;
 			count = 0;
 		}
 
 		if (isHit) {
 			fireCtr.fireNum -= 1;
-            
             isHit = false;
 		}
-
+		// フレームカウント
 		count++;
     }
-
-	
 
 	void OnTriggerStay2D(Collider2D col) {
 		if (col.gameObject.tag == "Enemy") {

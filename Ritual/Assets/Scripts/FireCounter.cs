@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireCounter : MonoBehaviour {
 
-	public GUIText fireGUI;
+	//public GUIText fireGUI;
 	public int fireNum;
     int fireNumStock;
 
@@ -14,7 +14,7 @@ public class FireCounter : MonoBehaviour {
 	void Update () {
         if (fireNumStock != fireNum)
         {
-            fireGUI.text = "" + fireNum;
+            //fireGUI.text = "" + fireNum;
             GameObject.Find("TorchObject").GetComponent<TorchPower>().show(fireNum);
             fireNumStock = fireNum;
         }

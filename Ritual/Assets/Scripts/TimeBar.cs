@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TimeBar : MonoBehaviour {
 
-	public float barLength = 1.42f;
+	public float barLength = 1.43f;
 	float crntBarLength;
 	float barSpan;
 	float playTime;

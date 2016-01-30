@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour {
 	int maxFire;
 
 	void Awake() {
-		fireCtr = GameObject.Find("FireGUI").GetComponent<FireCounter>();
+		fireCtr = GetComponent<FireCounter>();
 	}
 
 	void Start () {

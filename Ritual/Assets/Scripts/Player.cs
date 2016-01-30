@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 	FireCounter fireCtr;
 
 	void Awake() {
-		fireCtr = GameObject.Find("FireGUI").GetComponent<FireCounter>();
+		fireCtr = GameObject.FindWithTag("Fire").GetComponent<FireCounter>();
 	}
 
 	void Start() {
