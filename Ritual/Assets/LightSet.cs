@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class LightSet : MonoBehaviour {
+    bool End;
 
     Light li;   //ライト
     Light fireLight;                //祭壇用ライト
@@ -14,6 +15,7 @@ public class LightSet : MonoBehaviour {
     int fileState;
     // Use this for initialization
     void Start () {
+        End = false;
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
         fireLight = GameObject.Find("Firelight").GetComponent<Light>();
         li.intensity = 0.0f;
@@ -80,6 +82,7 @@ public class LightSet : MonoBehaviour {
             
         }
        */
+       /*
         time += Time.deltaTime;
         if (time >= 1.0)
         {
@@ -89,6 +92,7 @@ public class LightSet : MonoBehaviour {
                 time = 0.0f;
             }
         }
+        */
 	}
     void end()//終了処理
     {
@@ -99,6 +103,17 @@ public class LightSet : MonoBehaviour {
         GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
         GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f,0.0f);//吹っ飛び防止
         /*配列で取得*/
+        /*
+        GameObject[] objects;
+        while ((objects = GameObject.FindGameObjectsWithTag("Enemy")) == null)
+        {
+            
+        }
+        foreach (GameObject ene in objects)
+        {
+            ene.GetComponent<enemy>().enabled = false;//enemy停止
+        }
+        */
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject ene in objects)
         {
