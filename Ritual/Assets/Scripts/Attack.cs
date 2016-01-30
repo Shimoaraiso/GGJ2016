@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Attack : MonoBehaviour {
 
-	GameObject fireObj;
 	Fire fire;
 
 	bool isAttack;
@@ -11,10 +10,7 @@ public class Attack : MonoBehaviour {
     int count;
 
 	void Awake () {
-		fireObj = GameObject.FindWithTag("Fire");
-		fire = fireObj.GetComponent<Fire>();
-		Debug.Log(fireObj);
-		Debug.Log(fire);
+		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 	}
 
 	void Start () {   
