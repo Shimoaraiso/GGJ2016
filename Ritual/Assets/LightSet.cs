@@ -50,10 +50,16 @@ public class LightSet : MonoBehaviour {
         }else if(count == -3)
         {
             count = 0;
-            if (fireLight.intensity >0) {
+            if (fireLight.intensity > 0)
+            {
                 fireLight.intensity -= 1;//ライトを暗く
                 fireStoc -= 1;
+                if (fireLight.intensity == 0) {
+                    end();
+                }
             }
+            
+            
         }
        
         time += Time.deltaTime;
@@ -66,4 +72,18 @@ public class LightSet : MonoBehaviour {
             }
         }
 	}
+    void end()//終了処理
+    {
+        GameObject.Find("MainGameObject").GetComponent<main>().clear = true;//enemy生成停止
+        GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
+        GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
+        GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
+
+        /*配列で取得*/
+        GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject ene in objects)
+        {
+            ene.GetComponent<enemy>().enabled = false;//enemy停止
+        }
+    }
 }

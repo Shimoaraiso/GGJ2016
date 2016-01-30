@@ -12,7 +12,7 @@ public class main : MonoBehaviour {
     timer tm;
     int point;
     int state;
-    bool clear;
+    public bool clear;
 
 
 
@@ -78,4 +78,6 @@ public class main : MonoBehaviour {
 
         
     }
+   
+   
 }
