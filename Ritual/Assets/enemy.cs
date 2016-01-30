@@ -14,7 +14,6 @@ public class enemy : MonoBehaviour {
         enamyState = 0;
         enemyTimer = 0.0f;
         hit = false;
-        
     } 
 
 	// Update is called once per frame
