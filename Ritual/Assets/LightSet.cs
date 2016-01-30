@@ -3,30 +3,28 @@ using System.Collections;
 
 public class LightSet : MonoBehaviour {
 
-    Light li;
-    public float time;//制限時間
-    float delta;//1フレーム
+    Light li;   //ライト
+    float time; //制限時間
+    float delta;//明るくなる間隔
 
     // Use this for initialization
     void Start () {
-        
-        time = time/2;
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
-        print(time);
-        delta = 1.0f / time;
-       
+        li.intensity = 0.0f;
+        delta = 1.5f / time;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        li.intensity -=delta*Time.deltaTime;
-        print(li.intensity);
-        if (li.intensity <= 0.0f)
+        
+        time += Time.deltaTime;
+        if (time >= 1.0)
         {
-            delta = -delta;
-        } else if (li.intensity >= 1.5f)
-        {
-            delta = -delta;
+            if (li.intensity <= 1.5f)
+            {
+                li.intensity += delta;//少しづつ明るく
+                time = 0.0f;
+            }
         }
 	}
 }
