@@ -38,13 +38,13 @@ public class main : MonoBehaviour {
 
             spawnInterval = spawnInterval / 2.0f;
             state++;
-            ES.Espeed = 0.025f;
+            ES.Espeed = 0.015f;
         }
         else if(point * 2<= tm.getPlaytime() && playtime  > tm.getPlaytime() && state == 1)
         {
             spawnInterval = spawnInterval / 2.0f;
             state++;
-            ES.Espeed = 0.05f;
+            ES.Espeed = 0.03f;
         }
         else if (playtime <= tm.getPlaytime() && state == 2)
         {
