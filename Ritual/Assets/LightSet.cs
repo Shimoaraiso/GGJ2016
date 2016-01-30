@@ -36,6 +36,7 @@ public class LightSet : MonoBehaviour {
             {
                 fileState -=1;
                 count = 0;
+                if (fileState==0) end();
             }
             else
             {
@@ -57,7 +58,6 @@ public class LightSet : MonoBehaviour {
         }
         switch (fileState)
         {
-            case 0: end(); break;
             case 1: fireStoc = 3; max = 3; break;
             case 2: fireStoc = 5; max = 6; break;
             case 3: fireStoc = 7; break;
