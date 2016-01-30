@@ -9,14 +9,14 @@ public class FireCounter : MonoBehaviour {
 
     void Start () {
         fireNumStock = fireNum;
-        GameObject.Find("Power").GetComponent<TorchPower>().show(0);
+        GameObject.Find("TorchObject").GetComponent<TorchPower>().show(0);
     }
 
 	void Update () {
         if (fireNumStock != fireNum)
         {
             fireGUI.text = "" + fireNum;
-            GameObject.Find("Power").GetComponent<TorchPower>().show(fireNum);
+            GameObject.Find("TorchObject").GetComponent<TorchPower>().show(fireNum);
             fireNumStock = fireNum;
         }
        
