@@ -31,18 +31,14 @@ public class Player : MonoBehaviour {
 
 	void Move() {
 		rb2d.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
-		if (inputX < 0)
+		if (inputX < 0f)
 			transform.eulerAngles = new Vector3(0, 0, 90);
-		if (inputX > 0)
+		if (inputX > 0f)
 			transform.eulerAngles = new Vector3(0, 0, -90);
-		if (inputY > 0)
+		if (inputY > 0f && inputX < 0.5f)
 			transform.eulerAngles = new Vector3(0, 0, 0);
-		if (inputY < 0)
+		if (inputY < 0f && inputX > -0.5f)
 			transform.eulerAngles = new Vector3(0, 0, 180);
-
-		//if (transform.localScale.x > 0 && h < 0 || (transform.localScale.x < 0 && h > 0)) {
-		//	transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-		//}
 	}
 
 	void Clamp() {
