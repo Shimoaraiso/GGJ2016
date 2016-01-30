@@ -62,7 +62,7 @@ public class LightSet : MonoBehaviour {
             case 2: fireStoc = 5; max = 6; break;
             case 3: fireStoc = 7; break;
         }
-        print("FS"+fireStoc+"M"+ max+"C"+count+"ST"+fileState);
+        //print("FS"+fireStoc+"M"+ max+"C"+count+"ST"+fileState);
         /*
         else if(count == -1)
         {
@@ -96,9 +96,7 @@ public class LightSet : MonoBehaviour {
         GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
         GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
         GameObject.Find("Player").GetComponent<Animator>().enabled = false;//アニメーション停止
-        GameObject.Find("Player").GetComponent<Rigidbody2D>().isKinematic = false;//吹っ飛び防止
-        GameObject.Find("Player").GetComponent<Rigidbody2D>().angularVelocity = 0;//吹っ飛び防止
-
+        GameObject.Find("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f,0.0f);//吹っ飛び防止
         /*配列で取得*/
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject ene in objects)
