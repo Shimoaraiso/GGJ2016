@@ -40,11 +40,16 @@ public class LightSet : MonoBehaviour {
         if (count == 3)
         {
             count =0;
-            fireLight.intensity += 1;//ライトを明るく
+            if (fireLight.intensity < 7)
+            {
+                fireLight.intensity += 1;//ライトを明るく
+            }
         }else if(count == -3)
         {
             count = 0;
-            fireLight.intensity -= 1;//ライトを暗く
+            if (fireLight.intensity >0) {
+                fireLight.intensity -= 1;//ライトを暗く
+            }
         }
        
         time += Time.deltaTime;
