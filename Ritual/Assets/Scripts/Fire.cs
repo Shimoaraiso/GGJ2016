@@ -21,7 +21,7 @@ public class Fire : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Player") {
             //fireCtr.fireNum = maxFire;
-            fireCtr.fireNum = LightSet.fireStoc+1;
+            fireCtr.fireNum = LightSet.fireStoc;
             
         }
 	}
