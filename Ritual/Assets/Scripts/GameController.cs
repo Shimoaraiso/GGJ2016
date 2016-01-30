@@ -15,10 +15,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (state == 1 && tm.getPlaytime() >= 20) {
+		if (state == 1 && tm.getPlaytime() >= 30) {
 			bg1.SetActive(false);
 			state = 2;
-		} else if (state == 2 && tm.getPlaytime() >= 40) {
+		} else if (state == 2 && tm.getPlaytime() >= 50) {
 			bg2.SetActive(false);
 			state = 3;
 		}

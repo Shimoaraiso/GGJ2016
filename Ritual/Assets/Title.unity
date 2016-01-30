@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94301de38acd8e4b944663579c5dd8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offSet_stage1_X: -330
+  offSet_stage1_Y: 60
 --- !u!81 &96039763
 AudioListener:
   m_ObjectHideFlags: 0
@@ -183,28 +185,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1 &533992644
+--- !u!1 &934533241
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 533992646}
-  - 212: {fileID: 533992645}
+  - 4: {fileID: 934533243}
+  - 212: {fileID: 934533242}
   m_Layer: 0
-  m_Name: bacck_image
+  m_Name: title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!212 &533992645
+--- !u!212 &934533242
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 533992644}
+  m_GameObject: {fileID: 934533241}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -225,18 +227,18 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3c6a2daffb03eaf4dabf4d0552224298, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be390b1ae90472d40b28d65bd30264b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!4 &533992646
+--- !u!4 &934533243
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 533992644}
+  m_GameObject: {fileID: 934533241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 2.8, y: 2.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
