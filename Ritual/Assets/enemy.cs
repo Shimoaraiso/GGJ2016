@@ -35,6 +35,7 @@ public class enemy : MonoBehaviour {
                 enemyTimer += Time.deltaTime;
                 if (!hit)
                 {
+                    transform.FindChild("Enemys").gameObject.GetComponent<Animator>().SetBool("hit",true);
                     this.GetComponent<CircleCollider2D>().enabled = false;//Collider消去
                     hit = true;
                 }
