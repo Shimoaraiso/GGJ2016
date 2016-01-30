@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	float moveSpeed = 10;
 	float inputX;
 	float inputY;
-    //test
+
 	public Rigidbody2D rb2d;
 
 	FireCounter fireCtr;
@@ -19,20 +19,38 @@ public class Player : MonoBehaviour {
 
 	}
 
-	void Update() {	
+	void Update() {
 		UserInput();
+
 	}
 
 	void FixedUpdate() {
 		Move();
+		Clamp();
 	}
 
 	void Move() {
 		rb2d.velocity = new Vector2(inputX * moveSpeed, inputY * moveSpeed);
-		if(inputX < 0) transform.eulerAngles = new Vector3(0, 0, 90);
-		if(inputX > 0) transform.eulerAngles = new Vector3(0, 0, -90);
-		if(inputY > 0) transform.eulerAngles = new Vector3(0, 0, 0);
-		if(inputY < 0) transform.eulerAngles = new Vector3(0, 0, 180);
+		if (inputX < 0)
+			transform.eulerAngles = new Vector3(0, 0, 90);
+		if (inputX > 0)
+			transform.eulerAngles = new Vector3(0, 0, -90);
+		if (inputY > 0)
+			transform.eulerAngles = new Vector3(0, 0, 0);
+		if (inputY < 0)
+			transform.eulerAngles = new Vector3(0, 0, 180);
+	}
+
+	void Clamp() {
+		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+		Vector2 pos = transform.position;
+
+		pos.x = Mathf.Clamp(pos.x, min.x, max.x);
+		pos.y = Mathf.Clamp(pos.y, min.y, max.y);
+
+		transform.position = pos;
 	}
 
 	void UserInput() {
