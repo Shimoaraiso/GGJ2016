@@ -5,6 +5,7 @@ public class main : MonoBehaviour {
 
     public int playtime;
     public float spawnInterval;
+    public float espeed;
     bool SpaceKey;
     GameObject ESObject;//
     enemySpawn ES;      //enemySpawnスクリプト
@@ -12,6 +13,8 @@ public class main : MonoBehaviour {
     int point;
     int state;
     bool clear;
+
+
 
 
     // Use this for initialization
@@ -22,9 +25,10 @@ public class main : MonoBehaviour {
         tm= GameObject.Find("TimerObject").GetComponent<timer>();
         tm.setTime(0.0f);
         point = playtime / 3;
-         state = 0;
+        state = 0;
         clear = false;
-
+        ES.Espeed = 0.0f;
+        
     }
 	
 	// Update is called once per frame
@@ -34,13 +38,15 @@ public class main : MonoBehaviour {
 
             spawnInterval = spawnInterval / 2.0f;
             state++;
+            ES.Espeed = 0.025f;
         }
         else if(point * 2<= tm.getPlaytime() && playtime  > tm.getPlaytime() && state == 1)
         {
             spawnInterval = spawnInterval / 2.0f;
             state++;
-            
-        }else if (playtime <= tm.getPlaytime() && state == 2)
+            ES.Espeed = 0.05f;
+        }
+        else if (playtime <= tm.getPlaytime() && state == 2)
         {
             if (tm.getPlaytime() >= playtime)
             {
