@@ -22,6 +22,7 @@ public class Fire : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
             //fireCtr.fireNum = maxFire;
             fireCtr.fireNum = LightSet.fireStoc+1;
+            
         }
 	}
 

@@ -10,7 +10,8 @@ public class LightSet : MonoBehaviour {
     int stock;//fireの一つ前の値
     int count;
     public static int fireStoc;
-
+    TorchPower TP;
+    
     // Use this for initialization
     void Start () {
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
@@ -21,11 +22,12 @@ public class LightSet : MonoBehaviour {
         stock = altarState.altarCount;
         count = 0;
         fireStoc = 3;
+        TP = GameObject.Find("Power").GetComponent<TorchPower>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-
+        
         if (altarState.altarCount != stock)
         {
             if (altarState.altarCount < stock)
@@ -46,6 +48,7 @@ public class LightSet : MonoBehaviour {
             {
                 fireLight.intensity += 1;//ライトを明るく
                 fireStoc += 1;
+               
             }
         }else if(count == -3)
         {
@@ -54,6 +57,7 @@ public class LightSet : MonoBehaviour {
             {
                 fireLight.intensity -= 1;//ライトを暗く
                 fireStoc -= 1;
+                
                 if (fireLight.intensity == 0) {
                     end();
                 }

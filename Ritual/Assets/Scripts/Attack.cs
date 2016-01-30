@@ -8,16 +8,15 @@ public class Attack : MonoBehaviour {
 
 	bool isAttack;
 	bool isHit;
-
-	int count;
+    int count;
 
 	void Awake() {
 		fireCtr = GameObject.Find("FireGUI").GetComponent<FireCounter>();
 	}
 
 	void Start () {
-	
-	}
+       
+    }
 	
 	void Update () {
 
@@ -33,7 +32,8 @@ public class Attack : MonoBehaviour {
 
 		if (isHit) {
 			fireCtr.fireNum -= 1;
-			isHit = false;
+            
+            isHit = false;
 		}
 
 		count++;
