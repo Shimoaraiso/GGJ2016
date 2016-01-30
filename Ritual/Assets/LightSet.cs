@@ -10,7 +10,7 @@ public class LightSet : MonoBehaviour {
     int stock;//fireの一つ前の値
     int count;
     public static int fireStoc;
-    TorchPower TP;
+   
     
     // Use this for initialization
     void Start () {
@@ -22,7 +22,7 @@ public class LightSet : MonoBehaviour {
         stock = altarState.altarCount;
         count = 0;
         fireStoc = 3;
-        TP = GameObject.Find("Power").GetComponent<TorchPower>();
+        
     }
 	
 	// Update is called once per frame
