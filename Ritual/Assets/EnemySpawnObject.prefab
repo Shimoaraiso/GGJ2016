@@ -43,7 +43,8 @@ MonoBehaviour:
   rightPositon: 20
   topPositon: 10
   bottomPositon: -10
-  enemy: {fileID: 168430, guid: 599d90d483c8f7b46b097c198ed73730, type: 2}
+  enemy: {fileID: 130434, guid: b21d8c6ff8de1e44e8db13a2fa9b0ecd, type: 2}
+  Espeed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -54,7 +55,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 168430, guid: 599d90d483c8f7b46b097c198ed73730, type: 2}
+      objectReference: {fileID: 130434, guid: b21d8c6ff8de1e44e8db13a2fa9b0ecd, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 171054}
