@@ -10,13 +10,15 @@ public class enemy : MonoBehaviour {
     float enemyTimer;//倒された時の待機時間
     bool hit;//当たったか判定
 
-    void start(){
+	Animator animator;
+
+    void Start(){
         enamyState = 0;
         enemyTimer = 0.0f;
         hit = false;
+		animator = transform.FindChild("Enemys").gameObject.GetComponent<Animator>();
     } 
 
-	// Update is called once per frame
 	void Update () {
 
         switch(enamyState)
@@ -36,7 +38,7 @@ public class enemy : MonoBehaviour {
                 enemyTimer += Time.deltaTime;
                 if (!hit)
                 {
-                    transform.FindChild("Enemys").gameObject.GetComponent<Animator>().SetBool("hit",true);//アニメーション切り替え
+					animator.SetBool("hit",true);//アニメーション切り替え
                     this.GetComponent<CircleCollider2D>().enabled = false;//Collider消去
                     hit = true;
                 }

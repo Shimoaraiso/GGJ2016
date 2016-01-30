@@ -3,15 +3,18 @@ using System.Collections;
 
 public class Attack : MonoBehaviour {
 
-	GameObject target;
+	GameObject fireObj;
 	Fire fire;
 
 	bool isAttack;
 	bool isHit;
     int count;
 
-	void Awake() {
-		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
+	void Awake () {
+		fireObj = GameObject.FindWithTag("Fire");
+		fire = fireObj.GetComponent<Fire>();
+		Debug.Log(fireObj);
+		Debug.Log(fire);
 	}
 
 	void Start () {   

@@ -27,7 +27,9 @@ public class Player : MonoBehaviour {
 	void FixedUpdate() {
 		if (GameController.isPlaying) {
 			Move();
-		}
+		} else {
+			rb2d.velocity = Vector2.zero;
+        }
 		Clamp();
 	}
 
