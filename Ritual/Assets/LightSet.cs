@@ -92,6 +92,7 @@ public class LightSet : MonoBehaviour {
 	}
     void end()//終了処理
     {
+		Debug.Log("end");
         GameObject.Find("MainGameObject").GetComponent<main>().clear = true;//enemy生成停止
         GameObject.Find("Player").GetComponent<Player>().enabled = false;//Playerスクリプト停止
         GameObject.Find("AttackArea").GetComponent<Attack>().enabled = false;//Attackスクリプト停止
