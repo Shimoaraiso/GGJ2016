@@ -9,11 +9,7 @@ public class LightSet : MonoBehaviour {
     float delta;//明るくなる間隔
     int stock;//fireの一つ前の値
     int count;
-    int fireTemp;
-    int fireState;
-    int fmax, fmin, fcount;
     public static int fireStoc;
-    
    
     
     // Use this for initialization
@@ -25,50 +21,18 @@ public class LightSet : MonoBehaviour {
         //Debug.Log(delta);
         stock = altarState.altarCount;
         count = 0;
-        fcount = 0;
-        fireTemp = altarState.fileCount;
-        fireState = 1;
-        fmax = 3;
-        fmin = -1;
         fireStoc = 3;
-       
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(fireState + "/" + fcount+"//"+ fmax);
-        if (altarState.fileCount != fireTemp)//変更があり
-        {
-            if (altarState.fileCount < fireTemp)
-            {
-                fireState -= 1;
-            }
-            else
-            {
-                fcount++;
-            }
-            fireTemp = altarState.fileCount;//fireTemp更新s
-        }
-        if (fcount == fmax)
-        {
-            fcount = 0;
-            if (fireState != 3) { fireState += 1; }
-            
-        }
-        switch (fireState)
-        {
-            case 0: end(); break;
-            case 1: fireStoc = 3; fmax = 3; break;
-            case 2: fireStoc = 5; fmax = 6; break;
-            case 3: fireStoc = 7; break;
-        }
-
-        /*
+        
         if (altarState.altarCount != stock)
         {
             if (altarState.altarCount < stock)
             {
-                count--;    wd
+                count--;    
             }
             else
             {
@@ -80,13 +44,13 @@ public class LightSet : MonoBehaviour {
         if (count == 3)
         {
             count =0;
-            if (fireLight.intensity < 8)
+            if (fireLight.intensity < 7)
             {
                 fireLight.intensity += 1;//ライトを明るく
                 fireStoc += 1;
                
             }
-        }else if(count == -1)
+        }else if(count == -3)
         {
             count = 0;
             if (fireLight.intensity > 0)
@@ -101,7 +65,7 @@ public class LightSet : MonoBehaviour {
             
             
         }
-       */
+       
         time += Time.deltaTime;
         if (time >= 1.0)
         {
