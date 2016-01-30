@@ -15,6 +15,7 @@ public class main : MonoBehaviour {
     public bool clear;
 
     void Start () {
+
         SpaceKey = false;
         GameObject ESObject = GameObject.Find("EnemySpawnObject");//EnemySpawnObjectのオブジェクト取得
         ES = ESObject.GetComponent<enemySpawn>(); //EnemySpawnObjectオブジェクトの中のenemySpawnスクリプトを取得
@@ -24,6 +25,7 @@ public class main : MonoBehaviour {
         state = 0;
         clear = false;
         ES.Espeed = 0.0f;
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Play();
     }
 	
 	void Update () {
