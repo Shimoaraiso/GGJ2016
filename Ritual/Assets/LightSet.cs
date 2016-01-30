@@ -4,7 +4,7 @@ using System.Collections;
 public class LightSet : MonoBehaviour {
 
     Light li;   //ライト
-    float time; //制限時間
+    public float time; //制限時間
     float delta;//明るくなる間隔
 
     // Use this for initialization
@@ -12,6 +12,7 @@ public class LightSet : MonoBehaviour {
         li = GameObject.Find("DirectionalLight").GetComponent<Light>();
         li.intensity = 0.0f;
         delta = 1.5f / time;
+        Debug.Log(delta);
     }
 	
 	// Update is called once per frame
