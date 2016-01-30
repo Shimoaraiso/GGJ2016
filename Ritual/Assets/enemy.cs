@@ -28,7 +28,9 @@ public class enemy : MonoBehaviour {
                 {
                     Destroy(this.gameObject);//enemy消去
                     altarState.altarCount--;
-                    
+                    altarState.fileCount--;
+
+
                 }
                 break;
             case 1://倒された
@@ -48,6 +50,7 @@ public class enemy : MonoBehaviour {
                 {
                     Destroy(this.gameObject);//enemy消去
                     altarState.altarCount++;
+                    altarState.fileCount++;
 
                 }
                 transform.RotateAround(Vector3.zero, new Vector3(0.0f, 0.0f, 1.0f), 120 * Time.deltaTime);//回転の挙動追加
