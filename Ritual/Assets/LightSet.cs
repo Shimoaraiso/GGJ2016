@@ -9,6 +9,7 @@ public class LightSet : MonoBehaviour {
     float delta;//明るくなる間隔
     int stock;//fireの一つ前の値
     int count;
+    public static int fireStoc;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +20,7 @@ public class LightSet : MonoBehaviour {
         //Debug.Log(delta);
         stock = altarState.altarCount;
         count = 0;
+        fireStoc = 3;
     }
 	
 	// Update is called once per frame
@@ -43,12 +45,14 @@ public class LightSet : MonoBehaviour {
             if (fireLight.intensity < 7)
             {
                 fireLight.intensity += 1;//ライトを明るく
+                fireStoc += 1;
             }
         }else if(count == -3)
         {
             count = 0;
             if (fireLight.intensity >0) {
                 fireLight.intensity -= 1;//ライトを暗く
+                fireStoc -= 1;
             }
         }
        
