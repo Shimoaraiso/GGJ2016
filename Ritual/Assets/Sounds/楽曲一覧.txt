@@ -1,0 +1,12 @@
+﻿オープニング  ：bgm_maoudamashii_orchestra12.mp3
+プレイ中BGM	  ：fuyunoyonoarashi.mp3   1票
+		　：ryunomai.mp3　
+		　：kaisen.mp3　1票
+通常攻撃	  ：hit01.mp3
+攻撃空振り	  ：punch-swing1.mp3
+魔法陣P_UP	  ：magic-cure1.mp3
+魔法陣P_DOWN  ：powerdown07.mp3
+炎補充		  ：kira2.mp3
+エネミー吸収音：magic-wind01.mp3
+ゲームオーバー：despair1.mp3
+ゲームクリア  ：j-17.mp3
