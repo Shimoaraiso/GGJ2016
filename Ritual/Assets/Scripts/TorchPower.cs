@@ -23,9 +23,9 @@ public class TorchPower : MonoBehaviour {
         {
             totch[i].GetComponent<MeshRenderer>().enabled = true;
         }
-        for (int i = num; i < 10; i++)
+        for (int j = num; j < 10; j++)
         {
-            totch[i].GetComponent<MeshRenderer>().enabled = false;
+            totch[j].GetComponent<MeshRenderer>().enabled = false;
         }
     }
 	
