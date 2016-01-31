@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Continue : MonoBehaviour {
 
-	void Update () {
+
+
+    void Update () {
 		if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) {
-			SceneManager.LoadScene("Stage1");
+            
+            SceneManager.LoadScene("Stage1");	
 		}
 	}
 }
