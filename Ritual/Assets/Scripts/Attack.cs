@@ -4,7 +4,7 @@ using System.Collections;
 public class Attack : MonoBehaviour {
 
 	Fire fire;
-
+    AudioPlay SE;
 	bool isAttack;
 	bool isHit;
     int count;
@@ -13,7 +13,8 @@ public class Attack : MonoBehaviour {
 		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 	}
 
-	void Start () {   
+	void Start () {
+        SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
     }
 	
 	void Update () {
@@ -24,13 +25,16 @@ public class Attack : MonoBehaviour {
 		}
 
 		if (GameController.isPlaying && fire.fireNum != 0 && Input.GetButtonDown("Fire1")) {
+            SE.playSE(1);
+            
 			// 攻撃判定は3フレーム継続
 			isAttack = true;
 			count = 0;
 		}
 
 		if (isHit) {
-			fire.fireNum -= 1;
+            SE.playSE(0);
+            fire.fireNum -= 1;
             isHit = false;
 		}
 		// フレームカウント
