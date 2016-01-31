@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Fire : MonoBehaviour {
-
+    AudioPlay SE;
 	public int fireNum;
 	int fireNumStock;
 
@@ -15,11 +15,17 @@ public class Fire : MonoBehaviour {
     }
 
 	void Start() {
+        SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
 		fireNumStock = fireNum;
 	}
 
 	void OnCollisionEnter2D(Collision2D col) {
 		if (col.gameObject.tag == "Player") {
+            if(fireNum!= MagicCircle.fireStoc)
+            {
+                SE.playSE(3);
+            }
+           
             fireNum = MagicCircle.fireStoc;
 			tp.show(fireNum);
 		}

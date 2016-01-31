@@ -39,7 +39,8 @@ public class GameController : MonoBehaviour {
 	}
 
 	public static void End() {
-		Debug.Log("end");
+        GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
+        Debug.Log("end");
 		isPlaying = false;
 	}
 }

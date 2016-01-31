@@ -4,7 +4,12 @@ using System.Collections;
 public class Attack : MonoBehaviour {
 
 	Fire fire;
+<<<<<<< HEAD
 	public bool isAttack;
+=======
+    AudioPlay SE;
+	bool isAttack;
+>>>>>>> 9dde0199e1b1716e430b37c7f227533e8e0ca13c
 	bool isHit;
     int count;
 
@@ -13,7 +18,12 @@ public class Attack : MonoBehaviour {
 	}
 
 	void Start () {
+<<<<<<< HEAD
 	}
+=======
+        SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
+    }
+>>>>>>> 9dde0199e1b1716e430b37c7f227533e8e0ca13c
 	
 	void Update () {
 
@@ -23,13 +33,16 @@ public class Attack : MonoBehaviour {
 		}
 
 		if (GameController.isPlaying && fire.fireNum != 0 && Input.GetButtonDown("Fire1")) {
+            SE.playSE(1);
+            
 			// 攻撃判定は3フレーム継続
 			isAttack = true;
 			count = 0;
 		}
 
 		if (isHit) {
-			fire.fireNum -= 1;
+            SE.playSE(0);
+            fire.fireNum -= 1;
             isHit = false;
 		}
 		// フレームカウント
