@@ -52,9 +52,13 @@ public class GameController : MonoBehaviour {
 	}
 
 	public static void End() {
-        GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
-        GameObject.Find("fireParticle").GetComponent<ParticleSystem>().Stop();
-        GameObject.Find("Fire").SetActive(false);
+        if (isGameOver)
+        {
+            GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
+            GameObject.Find("fireParticle").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("Fire").GetComponent<Renderer>().enabled = false;
+        }
+
         Debug.Log("end");
 		isPlaying = false;
 	}
@@ -63,7 +67,7 @@ public class GameController : MonoBehaviour {
 		SceneManager.LoadScene("Clear");
 	}
 	void GameOver() {
-		SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
 	}
 
 }
