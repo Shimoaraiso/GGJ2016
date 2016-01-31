@@ -5,7 +5,7 @@ public class enemy : MonoBehaviour {
    
     public Vector3 targetPosition;  //enemyの目的地
     public float speed;             //移動速度
-    
+    AudioPlay SE;
     public int enamyState;
     float enemyTimer;//倒された時の待機時間
     bool hit;//当たったか判定
@@ -17,6 +17,7 @@ public class enemy : MonoBehaviour {
         enemyTimer = 0.0f;
         hit = false;
 		animator = transform.FindChild("Enemys").gameObject.GetComponent<Animator>();
+        SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
     } 
 
 	void Update () {
@@ -52,7 +53,7 @@ public class enemy : MonoBehaviour {
                 {
                     Destroy(this.gameObject);//enemy消去
                     altarState.altarCount++;
-
+                    SE.playSE(5);
                 }
                 transform.RotateAround(Vector3.zero, new Vector3(0.0f, 0.0f, 1.0f), 120 * Time.deltaTime);//回転の挙動追加
                 break;
