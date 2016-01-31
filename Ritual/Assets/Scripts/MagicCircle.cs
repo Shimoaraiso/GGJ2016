@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class MagicCircle : MonoBehaviour {
-    AudioPlay SE;
+    AudioPlay se2;
 	Transform magicCircle;
 	int filestateTemp;
 	int stock;
@@ -19,8 +19,10 @@ public class MagicCircle : MonoBehaviour {
 		max = 3;
 		fileState = 1;
 		filestateTemp = fileState;
-        SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
-	}
+   
+        se2 = GameObject.Find("SEObject").GetComponent<AudioPlay>();
+
+    }
 
 	void Update() {
 
@@ -48,11 +50,11 @@ public class MagicCircle : MonoBehaviour {
         if (filestateTemp != fileState) {
             if (filestateTemp > fileState)
             {
-                SE.playSE(4);
+                se2.playSE(2);
             }
             else
             {
-                SE.playSE(2);
+                se2.playSE(3);
             }
 
             switch (fileState) {
