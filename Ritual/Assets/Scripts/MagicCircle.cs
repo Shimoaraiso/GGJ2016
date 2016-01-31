@@ -32,6 +32,7 @@ public class MagicCircle : MonoBehaviour {
 				count = 0;
 				if (fileState == 0) {
 					GetComponent<Renderer>().enabled = false;
+					GameController.isGameOver = true;
 					GameController.End();
 				}
 			} else {

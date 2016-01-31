@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour {
 
@@ -15,14 +17,18 @@ public class GameController : MonoBehaviour {
 
 	int state;
 	public static bool isPlaying;
+	public static bool isClear;
+	public static bool isGameOver;
 
 	void Awake () {
 		timer = timerObj.GetComponent<timer>();
 		isPlaying = true;
+		isClear = false;
+		isGameOver = false;
 	}
 
 	void Start () {
-		
+
 		state = 1;
 	}
 
@@ -36,6 +42,13 @@ public class GameController : MonoBehaviour {
 				state = 3;
 			}
 		}
+
+		if (isClear) {
+			Invoke("Clear", 2.0f);
+		}
+		if (isGameOver) {
+			Invoke("GameOver", 2.0f);
+		}
 	}
 
 	public static void End() {
@@ -45,4 +58,12 @@ public class GameController : MonoBehaviour {
         Debug.Log("end");
 		isPlaying = false;
 	}
+
+	void Clear() {
+		SceneManager.LoadScene("Clear");
+	}
+	void GameOver() {
+		SceneManager.LoadScene("GameOver");
+	}
+
 }

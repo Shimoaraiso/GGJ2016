@@ -23,6 +23,7 @@ public class TimeBar : MonoBehaviour {
 
 	void Update () {
 		if (timer.getPlaytime() >= 70) {
+			GameController.isClear = true;
 			GameController.End();
 		}	
 	}
