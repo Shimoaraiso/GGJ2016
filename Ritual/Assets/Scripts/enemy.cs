@@ -5,7 +5,7 @@ public class enemy : MonoBehaviour {
    
     public Vector3 targetPosition;  //enemyの目的地
     public float speed;             //移動速度
-    AudioPlay SE;
+    AudioPlay SE ,se2;
     public int enamyState;
     float enemyTimer;//倒された時の待機時間
     bool hit;//当たったか判定
@@ -18,6 +18,7 @@ public class enemy : MonoBehaviour {
         hit = false;
 		animator = transform.FindChild("Enemys").gameObject.GetComponent<Animator>();
         SE = GameObject.Find("AudioObject").GetComponent<AudioPlay>();
+        se2 = GameObject.Find("SEObject").GetComponent<AudioPlay>();
     } 
 
 	void Update () {
@@ -45,7 +46,11 @@ public class enemy : MonoBehaviour {
                     transform.FindChild("AttackEfect").GetComponent<ParticleSystem>().Emit(30);
                 }
                 if (enemyTimer > 0.1) transform.FindChild("AttackEfect").GetComponent<ParticleSystem>().Stop();
-                if (enemyTimer > 2) enamyState = 2;//吸い込まれる状態に移行
+                if (enemyTimer > 2)
+                {
+                    se2.playSE(0);
+                    enamyState = 2;//吸い込まれる状態に移行
+                }
                 break;
             case 2://吸い込まれる状態
                

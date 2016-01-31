@@ -23,7 +23,7 @@ public class Fire : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
             if(fireNum!= MagicCircle.fireStoc)
             {
-                SE.playSE(3);
+                SE.playSE(2);
             }
            
             fireNum = MagicCircle.fireStoc;
