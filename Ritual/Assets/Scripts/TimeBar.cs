@@ -17,7 +17,7 @@ public class TimeBar : MonoBehaviour {
 	void Start () {
 		crntBarLength = 0;
         transform.localScale = new Vector2(crntBarLength, transform.localScale.y);
-		barSpan = barLength / 335;
+		barSpan = barLength / 330;
 		StartCoroutine(Timebar());
 	}
 

@@ -4,8 +4,7 @@ using System.Collections;
 public class Attack : MonoBehaviour {
 
 	Fire fire;
-
-	bool isAttack;
+	public bool isAttack;
 	bool isHit;
     int count;
 
@@ -13,8 +12,8 @@ public class Attack : MonoBehaviour {
 		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 	}
 
-	void Start () {   
-    }
+	void Start () {
+	}
 	
 	void Update () {
 

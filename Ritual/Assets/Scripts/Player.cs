@@ -10,9 +10,12 @@ public class Player : MonoBehaviour {
 	public Rigidbody2D rb2d;
 	public Animator anmtr;
 	Fire fire;
+	Attack atk;
 
 	void Awake() {
 		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
+		atk = transform.FindChild("AttackArea").gameObject.GetComponent<Attack>();
+
 	}
 
 	void Start() {
@@ -72,5 +75,6 @@ public class Player : MonoBehaviour {
 	void MecCheck() {
 		anmtr.SetFloat("Horizontal", inputX);
 		anmtr.SetFloat("Vertical", inputY);
+		anmtr.SetBool("IsAttack", atk.isAttack);
 	}
 }
