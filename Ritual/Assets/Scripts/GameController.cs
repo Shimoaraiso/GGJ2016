@@ -41,8 +41,6 @@ public class GameController : MonoBehaviour {
 	public static void End() {
         GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
         GameObject.Find("fireParticle").GetComponent<ParticleSystem>().Stop();
-
-        GameObject.Find("Saidan").SetActive(false);
         GameObject.Find("Fire").SetActive(false);
         Debug.Log("end");
 		isPlaying = false;
