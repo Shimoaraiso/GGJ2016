@@ -15,7 +15,6 @@ public class Player : MonoBehaviour {
 	void Awake() {
 		fire = GameObject.FindWithTag("Fire").GetComponent<Fire>();
 		atk = transform.FindChild("AttackArea").gameObject.GetComponent<Attack>();
-
 	}
 
 	void Start() {

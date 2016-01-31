@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour {
 
 		if (isClear) {
 			clearText.enabled = true;
-			Invoke("Clear", 2.0f);
+			Invoke("Clear", 3.0f);
 		}
 		if (isGameOver) {
 			Invoke("GameOver", 3.0f);
