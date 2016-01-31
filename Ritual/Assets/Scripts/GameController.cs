@@ -52,11 +52,12 @@ public class GameController : MonoBehaviour {
 		if (isGameOver) {
 			Invoke("GameOver", 3.0f);
 		}
-
+        /*
 		// デバッグ用裏コマンド
 		if (Input.GetKey("p") && Input.GetKey("l")) {
 			isClear = true;
         }
+        */
     }
 
 	public static void End() {
