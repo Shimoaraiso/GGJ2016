@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour {
 
 	public main main;
 	timer timer;
-	TimeBar bar;  
+	TimeBar bar;
+	GUIText clearText;
 
 	int state;
 	public static bool isPlaying;
@@ -22,6 +23,7 @@ public class GameController : MonoBehaviour {
 
 	void Awake () {
 		timer = timerObj.GetComponent<timer>();
+		clearText = GameObject.Find("ClearText").GetComponent<GUIText>();
 		isPlaying = true;
 		isClear = false;
 		isGameOver = false;
@@ -44,12 +46,18 @@ public class GameController : MonoBehaviour {
 		}
 
 		if (isClear) {
+			clearText.enabled = true;
 			Invoke("Clear", 2.0f);
 		}
 		if (isGameOver) {
-			Invoke("GameOver", 2.0f);
+			Invoke("GameOver", 3.0f);
 		}
-	}
+
+		// デバッグ用裏コマンド
+		if (Input.GetKey("p") && Input.GetKey("l")) {
+			isClear = true;
+        }
+    }
 
 	public static void End() {
         GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();

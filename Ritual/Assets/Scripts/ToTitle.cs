@@ -2,12 +2,11 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+public class ToTitle : MonoBehaviour {
 
-public class Continue : MonoBehaviour {
-
-	void Update () {
+	void Update() {
 		if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0)) {
-			SceneManager.LoadScene("Stage1");
+			SceneManager.LoadScene("Title");
 		}
 	}
 }
