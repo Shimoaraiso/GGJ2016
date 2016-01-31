@@ -39,14 +39,16 @@ public class enemy : MonoBehaviour {
                 enemyTimer += Time.deltaTime;
                 if (!hit)
                 {
-					animator.SetBool("hit",true);//アニメーション切り替え
+                    animator.SetBool("hit",true);//アニメーション切り替え
                     this.GetComponent<CircleCollider2D>().enabled = false;//Collider消去
                     hit = true;
+                    transform.FindChild("AttackEfect").GetComponent<ParticleSystem>().Emit(30);
                 }
-
+                if (enemyTimer > 0.1) transform.FindChild("AttackEfect").GetComponent<ParticleSystem>().Stop();
                 if (enemyTimer > 2) enamyState = 2;//吸い込まれる状態に移行
                 break;
             case 2://吸い込まれる状態
+               
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * 5);//目的地に移動
 
                 if (transform.position == targetPosition)//目的地に着いたら

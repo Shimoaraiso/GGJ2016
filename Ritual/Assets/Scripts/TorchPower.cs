@@ -7,7 +7,7 @@ public class TorchPower : MonoBehaviour {
 
     
     void Start () {
-        for (int i=0; i<10; i++)
+        for (int i=0; i<7; i++)
         {
             totch[i] = GameObject.Find("Torch" + (i + 1));
         }
@@ -23,7 +23,7 @@ public class TorchPower : MonoBehaviour {
         {
             totch[i].GetComponent<MeshRenderer>().enabled = true;
         }
-        for (int j = num; j < 10; j++)
+        for (int j = num; j < 7; j++)
         {
             totch[j].GetComponent<MeshRenderer>().enabled = false;
         }

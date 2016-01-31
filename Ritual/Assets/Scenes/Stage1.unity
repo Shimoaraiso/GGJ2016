@@ -2017,6 +2017,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11468542, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 119842, guid: 0d0d003dc4ef47e479c4ae28ab330584, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a6278d71d039b54f8a6e6f0903e3846, type: 2}
   m_IsPrefabParent: 0
