@@ -8,6 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
   - enabled: 1
+    path: Assets/Scenes/Guide.unity
+  - enabled: 1
     path: Assets/Scenes/Stage1.unity
   - enabled: 1
-    path: Assets/Scenes/End.unity
+    path: Assets/Scenes/GameOver.unity
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity

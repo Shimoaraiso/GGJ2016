@@ -24,7 +24,7 @@ public class Attack : MonoBehaviour {
 			count = 0;
 		}
 
-		if (GameController.isPlaying && fire.fireNum != 0 && Input.GetButtonDown("Fire1")) {
+		if (GameController.isPlaying && fire.fireNum != 0 && Input.GetButtonDown("Jump")) {
             SE.playSE(1);
             
 			// 攻撃判定は3フレーム継続
